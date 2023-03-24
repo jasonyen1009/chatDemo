@@ -1,24 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H5i-E6-Cvl">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21507"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Chat Table View Controller-->
+        <scene sceneID="czv-Wc-e1r">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="H5i-E6-Cvl" customClass="ChatTableViewController" customModule="chatDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QKO-Af-z7r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Teach" rowHeight="83" id="pSP-3R-S1c" customClass="TeachChatTableViewCell" customModule="chatDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="83"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pSP-3R-S1c" id="h26-5m-Ftg">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="83"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eNE-K7-6DS">
+                                            <rect key="frame" x="30" y="21" width="170" height="41"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-58-NwA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="24u-rA-HYn"/>
+                                                        <constraint firstAttribute="width" secondItem="fBI-58-NwA" secondAttribute="height" multiplier="11:10" id="L7U-2b-RX6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" scrollEnabled="NO" editable="NO" text="今天天氣不錯！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9la-q7-pcN">
+                                                    <rect key="frame" x="60" y="0.0" width="110" height="33"/>
+                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eNE-K7-6DS" secondAttribute="trailing" constant="10" id="QAP-Yf-ZTQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="eNE-K7-6DS" secondAttribute="bottom" constant="10" id="TBr-bc-7bH"/>
+                                        <constraint firstItem="eNE-K7-6DS" firstAttribute="top" secondItem="h26-5m-Ftg" secondAttribute="topMargin" constant="10" id="gvw-0m-EU1"/>
+                                        <constraint firstItem="eNE-K7-6DS" firstAttribute="leading" secondItem="h26-5m-Ftg" secondAttribute="leadingMargin" constant="10" id="iJj-W4-Bvz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImageView" destination="fBI-58-NwA" id="qvW-fr-xb1"/>
+                                    <outlet property="textView" destination="9la-q7-pcN" id="Zi9-3O-YUA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Ask" rowHeight="83" id="056-pH-hBx" customClass="AskChatTableViewCell" customModule="chatDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="133" width="393" height="83"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="056-pH-hBx" id="TpS-Pw-XLd">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="83"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9C3-FE-idx">
+                                            <rect key="frame" x="263" y="21" width="110" height="41"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" scrollEnabled="NO" editable="NO" text="今天天氣不錯！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="14p-NK-rt9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="33"/>
+                                                    <color key="backgroundColor" red="0.40000000000000002" green="0.25882352941176467" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9C3-FE-idx" secondAttribute="trailing" id="34t-Wn-ngp"/>
+                                        <constraint firstItem="9C3-FE-idx" firstAttribute="top" secondItem="TpS-Pw-XLd" secondAttribute="topMargin" constant="10" id="DZq-i2-qbS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9C3-FE-idx" secondAttribute="bottom" constant="10" id="b2C-j1-v74"/>
+                                        <constraint firstItem="9C3-FE-idx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TpS-Pw-XLd" secondAttribute="leadingMargin" constant="10" id="xRb-8Q-rDW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="14p-NK-rt9" id="VMS-vK-ZXO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H5i-E6-Cvl" id="Vym-yI-1wN"/>
+                            <outlet property="delegate" destination="H5i-E6-Cvl" id="b3Y-sy-sVp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWF-Og-1Ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-182" y="-214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="teacher" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
